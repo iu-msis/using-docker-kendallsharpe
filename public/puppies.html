@@ -13,7 +13,7 @@
      <a class="navlink" href="puppies.html">Report Puppies in Need of Help</a>
  </nav>
  <h2 id="puppytable"> All Puppies Reported</h2>
- <table style="width:100%">
+ <table id="taskTable" style="width:100%">
    <tr>
      <th>ZIP Code</th>
      <th>Date Seen</th>
@@ -57,6 +57,10 @@
      <td>N</td>
    </tr>
  </table>
+ <script src='js/tablesort.min.js'></script>
+ <script>
+  new Tablesort(document.getElementById('taskTable'));
+</script>
  <br>
  <br>
  <form action="" method="post">
