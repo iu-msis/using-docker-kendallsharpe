@@ -15,17 +15,19 @@
      <a class="navlink" href="puppies.html">Report Puppies in Need of Help</a>
  </nav>
  <div id=app>
+
 <!--from w3schools-->
- <a target="_blank" href="img/headshot.jpg">
-  <img src="img/headshot.jpg" height="200px" width="150px">
-</a>
-<p>Hi, my name is {{users.name.first}} {{users.name.last}} and I love to rescue puppies.</p>
-<p> Where I'm From: {{users.nat}} </p>
-<p> Birthdate: {{users.dob.date}} </p>
-<p> Age: {{users.dob.age}} </p>
-<p> Please email me at <a href="'mailto:'+ {{users.email}}"> {{users.email}} </a> if you know of any endangered puppies in the area.</p>
+<!--data below randomly generated from randomuser.me-->
+<span> <a :href="user.picture.large">
+  <img :src="user.picture.large" height="200px" width="150px"> </a>
+</span>
+<p>Hi, my name is {{user.name.first}} {{user.name.last}} and I love to rescue puppies.</p>
+<p> Where I'm From: {{user.nat}} </p>
+<p> Birthdate: {{user.dob.date}} </p>
+<p> Age: {{user.dob.age}} </p>
+<p> Please email me at <a :href="'mailto:'+ {{user.email}}"> {{user.email}} </a> if you know of any endangered puppies in the area.</p>
 <!--https://www.w3schools.com/tags/tag_address.asp found how to do this on W3Schools-->
 </div>
-<script src="index.js"></script>
+<script src="js/random.js"></script>
 </body>
 </html>
