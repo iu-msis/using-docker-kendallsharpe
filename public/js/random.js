@@ -2,23 +2,27 @@ var app = new Vue({
   el: '#app',
   data:
     {
-      user:{
+      user: {
         name:"",
-          email: "",
-          dob: "",
-          age: "",
-          nat: "",
-          picture:""
+        email: "",
+        dob: {
+          date: "",
+          age: ""
+        },
+        nat: "",
+        picture: {
+          large: ""
         }
+      }
     },
     methods: {
       fetchuser() {
         fetch("https://randomuser.me/api/")
-        .then(response=>response.json().results[0])
-        .then(json=>{app.user=json.results;});
+        .then(response=>response.json())
+        .then(json=>{app.user=json.results[0];});
     }
   },
-    created(){
+    created() {
       this.fetchuser();
     }
   });

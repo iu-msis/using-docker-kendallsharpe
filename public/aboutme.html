@@ -21,15 +21,15 @@
 <span> <a :href="user.picture.large">
   <img :src="user.picture.large" height="200px" width="150px"> </a>
 </span>
-<p>Hi, my name is {{user.name}} and I love to rescue puppies.</p>
+<p>Hi, my name is {{user.name.first}} {{user.name.last}} and I love to rescue puppies.</p>
 <p> Where I'm From: {{user.nat}} </p>
 <p> Birthdate: {{user.dob.date}} </p>
 <p> Age: {{user.dob.age}} </p>
-<p> Please email me at <a :href="'mailto:'+ {{user.email}}"> {{user.email}} </a> if you know of any endangered puppies in the area.</p>
+<p> Please email me at <a :href="'mailto:'+ user.email"> {{user.email}} </a> if you know of any endangered puppies in the area.</p>
 <!--https://www.w3schools.com/tags/tag_address.asp found how to do this on W3Schools-->
-</div>
-<div>
-  <button v-on:click="fetchuser">Another Rescuer</button>
+  <form v-on:submit.prevent="fetchuser">
+    <button type="submit">Another Rescuer</button>
+  </form>
 </div>
 <script src="js/random.js"></script>
 </body>
